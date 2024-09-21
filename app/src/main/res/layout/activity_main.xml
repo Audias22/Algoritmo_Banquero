@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_main.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simulación del Algoritmo del Banquero"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Panel de Recursos Disponibles -->
+    <TextView
+        android:id="@+id/tvRecursosDisponibles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recursos Disponibles:"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Recursos A, B, C -->
+    <LinearLayout
+        android:id="@+id/layoutRecursos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvRecursosDisponibles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <!-- Recurso A -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp">
+            <TextView
+                android:id="@+id/tvRecursoA"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="A"
+                android:gravity="center"
+                android:background="@drawable/resource_background"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etRecursoA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Recurso B -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp">
+            <TextView
+                android:id="@+id/tvRecursoB"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="B"
+                android:gravity="center"
+                android:background="@drawable/resource_background"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etRecursoB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Recurso C -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvRecursoC"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="C"
+                android:gravity="center"
+                android:background="@drawable/resource_background"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etRecursoC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Proceso P1 -->
+    <LinearLayout
+        android:id="@+id/layoutProceso1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layoutRecursos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceso P1: "
+            android:textSize="16sp"
+            android:gravity="center_vertical" />
+
+        <!-- Asignado -->
+        <TextView
+            android:id="@+id/tvAsignadoP1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asignado: A=0, B=0, C=0"
+            android:paddingStart="8dp"
+            android:textSize="14sp"
+            android:gravity="center_vertical" />
+
+        <!-- Solicitar Recursos -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <!-- Recursos a Solicitar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solicitar: "
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etSolicitarP1A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="A"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+
+            <EditText
+                android:id="@+id/etSolicitarP1B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="B"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+
+            <EditText
+                android:id="@+id/etSolicitarP1C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="C"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Botón para Solicitar Recursos -->
+        <Button
+            android:id="@+id/btnSolicitarP1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitar"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Proceso P2 -->
+    <LinearLayout
+        android:id="@+id/layoutProceso2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layoutProceso1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceso P2: "
+            android:textSize="16sp"
+            android:gravity="center_vertical" />
+
+        <!-- Asignado -->
+        <TextView
+            android:id="@+id/tvAsignadoP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asignado: A=0, B=0, C=0"
+            android:paddingStart="8dp"
+            android:textSize="14sp"
+            android:gravity="center_vertical" />
+
+        <!-- Solicitar Recursos -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <!-- Recursos a Solicitar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solicitar: "
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etSolicitarP2A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="A"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+
+            <EditText
+                android:id="@+id/etSolicitarP2B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="B"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+
+            <EditText
+                android:id="@+id/etSolicitarP2C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:hint="C"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Botón para Solicitar Recursos -->
+        <Button
+            android:id="@+id/btnSolicitarP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitar"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado del sistema: Seguro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/layoutProceso2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
